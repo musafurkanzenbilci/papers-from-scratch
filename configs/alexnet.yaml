@@ -1,0 +1,30 @@
+seed: 42
+
+data:
+  name: cifar10
+  val_ratio: 0.1
+  batch_size: 4
+  num_classes: 10
+
+model:
+  name: alexnet_cifar10
+  init: normal # or kaiming_normal
+  init_std: 0.05
+  init_bias: 0.0
+
+optim:
+  name: sgd           # sgd | adamw
+  lr: 0.001
+  momentum: 0.9
+  weight_decay: 0.0005
+
+sched:
+  name: plateau        # cosine | plateau | none
+  t_max: 100          # for cosine
+  mode: min           # for plateau
+
+train:
+  epochs: 1
+  early_stop_patience: 15
+  metric: macro_acc   # for best checkpoint
+  out_dir: runs
