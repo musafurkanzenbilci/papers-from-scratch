@@ -1,4 +1,5 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
+from typing import Optional
 
 class DataConfig(BaseModel):
     name: str
@@ -7,9 +8,9 @@ class DataConfig(BaseModel):
 
 class ModelConfig(BaseModel):
     name: str
-    init: str
-    init_std: float
-    init_bias: float
+    init: Optional[str] = None
+    init_std: Optional[float] = None
+    init_bias: Optional[float] = None
 
 class OptimConfig(BaseModel):
     name: str
