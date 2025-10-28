@@ -151,6 +151,7 @@ def save_model(model, config):
 
 def main(config):
     config = RunConfig(**config)
+    torch.manual_seed(config.seed)
     dataloaders = get_data_loaders(config.data)
     model = ModelRegistry.get(config.model.name)()
     losses, model, metric_tracker = train(model, device, dataloaders, config)
