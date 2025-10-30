@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Dict
 
 class DataConfig(BaseModel):
     name: str
@@ -11,6 +11,7 @@ class ModelConfig(BaseModel):
     init: Optional[str] = None
     init_std: Optional[float] = None
     init_bias: Optional[float] = None
+    model_specific_args: Optional[Dict] = {}
 
 class OptimConfig(BaseModel):
     name: str

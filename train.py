@@ -153,7 +153,7 @@ def main(config):
     config = RunConfig(**config)
     torch.manual_seed(config.seed)
     dataloaders = get_data_loaders(config.data)
-    model = ModelRegistry.get(config.model.name)()
+    model = ModelRegistry.get(config.model.name)(**config.model.model_specific_args)
     losses, model, metric_tracker = train(model, device, dataloaders, config)
     save_model(model, config)
     test_accuracy(model, dataloaders['test'])
