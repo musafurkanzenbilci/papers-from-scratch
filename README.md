@@ -3,13 +3,14 @@
 Implement the architectures introduced in papers using pytorch
 
 # Paperlog
-- Alexnet
-- VGG
-- Resnet
-- googLenet
+- [Alexnet](papers/alexnet/model.py)
+- [VGG](papers/vgg/model.py)
+- [Resnet](papers/resnet/model.py)
+- [googLenet](papers/googLenet/model.py)
+- [mobilenet](papers/mobilenet/model.py)
 
 # Worklog
-- Dataloader Registry
-- Model Registry
-- Config Model
-- trainer
+- [Dataloader Registry](core/dataloaders.py)
+- [Model Registry](core/model_registry.py)
+- [Config Model](core/config.py)
+- [trainer](train.py)
